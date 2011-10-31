@@ -1,0 +1,7 @@
+*.elc
+*~
+auto-save-list/
+eshell/
+elpa/
+ac-comphist.dat
+
