@@ -78,6 +78,13 @@
 (vendor 'coffee-mode)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cackefile" . coffee-mode))
+(add-hook 'coffee-mode-hook
+          '(lambda ()
+             (set (make-local-variable 'tab-width) 2)
+             (define-key coffee-mode-map (kbd "s-B") 'coffee-compile-buffer)
+             (define-key coffee-mode-map (kbd "s-b") 'coffee-compile-region)
+             (setq coffee-js-mode 'js-mode)
+             ))
 
 ;; Git
 (vendor 'magit)
