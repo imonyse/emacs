@@ -19,3 +19,4 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = git://github.com/magit/magit.git
+
