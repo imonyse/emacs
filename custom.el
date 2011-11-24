@@ -48,6 +48,7 @@
   (message "Refreshed open files.") )
 (global-set-key (kbd "<f5>") 'revert-all-buffers)
 
+;; theme
 (load-theme 'tango-dark)
 
 ;; default fonts

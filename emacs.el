@@ -143,7 +143,7 @@
 (add-hook 'js-mode-hook 
           '(lambda ()
              (vendor 'flymake-jslint)
-             (flymake-jslint-load)
+             ;; (flymake-jslint-load)
              (setq js-indent-level 2)))
 (put 'upcase-region 'disabled nil)
 
