@@ -154,3 +154,6 @@
                    tab-width        4
                    c-basic-offset   4)))
 
+;; auto complete parentheses
+(vendor 'autopair)
+(autopair-global-mode)
