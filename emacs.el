@@ -3,7 +3,7 @@
 (setq inhibit-startup-message t)
 (global-font-lock-mode t)
 (setq x-select-enable-clipboard t)
-(server-start)
+;; (server-start)
 (put 'set-goal-column 'disabled nil)
 (setq truncate-partial-width-windows nil)
 ;; (setq ns-command-modifier 'meta)
@@ -15,7 +15,7 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
-(global-set-key [(control return)] 'ns-toggle-fullscreen)
+;; (global-set-key [(control return)] 'ns-toggle-fullscreen)
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
@@ -143,8 +143,17 @@
 (add-hook 'js-mode-hook 
           '(lambda ()
              (vendor 'flymake-jslint)
-             ;; (flymake-jslint-load)
-             (setq js-indent-level 2)))
+             (flymake-jslint-load)
+             (setq js-indent-level 2)
+             (define-key js-mode-map "\C-ct" 'js-insert-section)))
+
+(defun js-insert-section (section)
+  "Inserts a kyle-style js section."
+  (interactive "sSection: ")
+  (insert "/* ----------------------------------------------------------------\n")
+  (insert (concat "* @group " section "\n"))
+  (insert " * ---------------------------------------------------------------- */\n"))
+
 (put 'upcase-region 'disabled nil)
 
 ;; emacs lisp 
