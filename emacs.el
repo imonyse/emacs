@@ -166,3 +166,10 @@
 ;; auto complete parentheses
 (vendor 'autopair)
 (autopair-global-mode)
+
+;; global gtags
+(vendor 'gtags)
+(setq c-mode-hook 
+      '(lambda ()
+	 (gtags-mode 1)))
+(global-set-key (kbd "<escape> .") 'gtags-find-tag)
